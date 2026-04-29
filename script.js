@@ -75,9 +75,8 @@ function initTicker() {
   const set = ticker.querySelector('.ticker-set');
   if (!set) return;
 
-  const clone = set.cloneNode(true);
   for (i = 0; i < 10; i++) {
-    ticker.appendChild(clone);
+    ticker.appendChild(set.cloneNode(true));
   }
 }
 
