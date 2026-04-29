@@ -75,9 +75,8 @@ function initTicker() {
   const set = ticker.querySelector('.ticker-set');
   if (!set) return;
 
-  for (i = 0; i < 10; i++) {
-    ticker.appendChild(set.cloneNode(true));
-  }
+  clone = set.cloneNode(true);
+  ticker.appendChild(clone);
 }
 
 // ── Init ────────────────────────────────────────────────
