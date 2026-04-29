@@ -75,8 +75,17 @@ function initTicker() {
   const set = ticker.querySelector('.ticker-set');
   if (!set) return;
 
-  const clone = set.cloneNode(true);
-  ticker.appendChild(clone);
+  const setWidth = set.offsetWidth;
+
+  while (ticker.scrollWidth < window.innerWidth * 2) {
+    ticker.appendChild(set.cloneNode(true));
+  }
+  
+  ticker.appendChild(set.cloneNode(true));
+  ticker.style.setProperty('--ticker-shift', `-${setWidth}px`);
+
+  // Scale duration to content width so speed stays consistent (~80px/s).
+  ticker.style.animationDuration = `${Math.round(setWidth / 80)}s`;
 }
 
 // ── Init ────────────────────────────────────────────────
