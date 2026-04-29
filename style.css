@@ -279,7 +279,7 @@ h3 { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.05em
 
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-99%); }
+  100% { transform: translateX(var(--ticker-shift, -50%)); }
 }
 
 /* ── Service cards ─────────────────────────────────── */
