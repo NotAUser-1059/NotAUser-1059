@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Villnuve — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════ NAVIGATION ══════════════ -->
+<nav>
+  <a class="nav-logo" onclick="navigate('home')">DV</a>
+
+  <ul class="nav-links">
+    <li><a onclick="navigate('home')"      data-page="home">Home</a></li>
+    <li><a onclick="navigate('bio')"       data-page="bio">Biography</a></li>
+    <li><a onclick="navigate('portfolio')" data-page="portfolio">Portfolio</a></li>
+    <li><a onclick="navigate('blog')"      data-page="blog">Writing</a></li>
+    <li><a onclick="navigate('contact')"   data-page="contact" class="nav-cta">Contact</a></li>
+  </ul>
+
+  <button class="burger" id="burger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="navigate('home');closeMenu()">Home</a>
+  <a onclick="navigate('bio');closeMenu()">Biography</a>
+  <a onclick="navigate('portfolio');closeMenu()">Portfolio</a>
+  <a onclick="navigate('blog');closeMenu()">Writing</a>
+  <a onclick="navigate('contact');closeMenu()">Contact</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <section class="hero container">
+    <div class="hero-left">
+      <div class="hero-eyebrow anim-item">Hello There!</div>
+      <h1 class="display anim-item">David<br><span>Villnuve</span></h1>
+      <p class="hero-sub anim-item">
+        Developer, Data Analyst, Debugger.<br>
+        "When in doubt, use brute force."
+      </p>
+      <div class="hero-actions anim-item">
+        <button class="btn btn-primary" onclick="navigate('portfolio')">View Work →</button>
+        <button class="btn btn-ghost" onclick="navigate('contact')">Get in Touch</button>
+      </div>
+
+      <div class="hero-stats anim-item">
+        <div>
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Projects<br>Completed</span>
+        </div>
+        <div>
+          <span class="stat-num" id="stat-years">0</span>
+          <span class="stat-label">Years of<br>Experience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right anim-item">
+      <div class="hero-graphic">
+        <div class="graphic-ring ring-1"></div>
+        <div class="graphic-ring ring-2"></div>
+        <div class="graphic-ring ring-3"></div>
+        <div class="graphic-center">
+          <span class="graphic-label">David Villnuve</span>
+          <span class="graphic-sub">Developer &amp; Debugger</span>
+        </div>
+        <div class="skill-chip chip-1">Python</div>
+        <div class="skill-chip chip-2">JavaScript</div>
+        <div class="skill-chip chip-3">Lua</div>
+        <div class="skill-chip chip-4">Flask</div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    ONE copy of ticker items lives here as .ticker-set.
+    script.js clones it and appends a second identical copy so the
+    translateX(-50%) animation lands exactly back at the start — no jump.
+  -->
+  <div class="ticker-wrap">
+    <div class="ticker" id="ticker">
+      <div class="ticker-set">
+        <span class="hi">David Villnuve</span><span>—</span>
+        <span>Web Development</span><span>—</span>
+        <span>Data Analysis</span><span>—</span>
+        <span>Problem Solver</span><span>—</span>
+        <span>Automation</span><span>—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container section">
+    <div class="tag">What I do</div>
+    <h2 class="section-title">Areas of Expertise</h2>
+    <div class="services">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>DEVELOPMENT</h3>
+        <p>Developing practical tools that can have a variety of uses, along with ensuring the fixing of bugs in the process.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>DESIGN</h3>
+        <p>Creating a minimal design to make use easy and simple, along with saving time for development due to the simplicity of the design.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>STRATEGY</h3>
+        <p>Using different coding strategies to both speed up developent and make the final product better, wiithout sacrificing functionality.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>AUTOMATION</h3>
+        <p>Scripting workflows, building tools, and eliminating repetitive work through smart automation.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 David Villnuve. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/NotAUser-1059" target="_blank">GitHub</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: BIOGRAPHY
+══════════════════════════════════════════ -->
+<div class="page" id="page-bio">
+  <div class="container section">
+    <div class="tag anim-item">About me</div>
+    <h2 class="section-title anim-item">Biography</h2>
+
+    <div class="bio-grid">
+      <div class="bio-sticky anim-item">
+        <div class="bio-meta">
+          <div class="bio-meta-row">
+            <span>Based in</span>
+            <span>United States of America</span>
+          </div>
+          <div class="bio-meta-row">
+            <span>Role</span>
+            <span>Developer</span>
+          </div>
+          <div class="bio-meta-row">
+            <span>Experience</span>
+            <span><span id="bio-years">0</span>+ Years</span>
+          </div>
+          <div class="bio-meta-row">
+            <span>Languages</span>
+            <span>Python, JS, Lua</span>
+          </div>
+          <div class="bio-meta-row">
+            <span>Education</span>
+            <span>Self-Taught</span>
+          </div>
+        </div>
+
+        <div class="bio-skills">
+          <div class="tag" style="margin-bottom:0.75rem;">Skills</div>
+          <div class="skill-bar-list">
+            <div class="skill-bar-item">
+              <span>Python</span>
+              <div class="skill-track"><div class="skill-fill" style="width:95%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>JavaScript</span>
+              <div class="skill-track"><div class="skill-fill" style="width:65%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Lua</span>
+              <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Linux</span>
+              <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bio-content">
+        <p class="lead anim-item">
+          "I'm a self-taught developer. I make things that I find useful as I need them, modify other things to fit my needs, and other times assist people with any computer issues I can help with"
+        </p>
+        <p class="anim-item">I am a developer that both grew up and lives in the United States of America. I am fully self taught in every thing that I know about computers and coding, and am constantly learning new things as I continue to try out things.</p>
+        <p class="anim-item">My knowledge in coding mainly started as the want to be able to make things that fit my specific needs, and that most people wouldn't think to make. So far throughout my time coding, I've learnt the languages Python, JavaScript, Lua, and a small amount of other languages such as Java.</p>
+        <p class="anim-item">My current main focus in learning is more compiled languages such as C/C++ and Java, due to the massive speed increase they give and the ability to use them almost anywhere without extra software once compiled.</p>
+
+        <div class="divider" style="margin: 3rem 0;"></div>
+
+        <div class="tag anim-item">Timeline</div>
+        <div class="timeline">
+          <div class="timeline-item anim-item">
+            <div class="timeline-year">2026</div>
+            <div>
+              <h4>WORKFLOW</h4>
+              <p>As of early 2026, I've created a (mostly) working workflow for both coding in Python along with other languages I would need to. This also includes using Linux (Fedora as of writing) as my daily operating system for the tools it provides that help with development.</p>
+            </div>
+          </div>
+          <div class="timeline-item anim-item">
+            <div class="timeline-year">LATE 2024</div>
+            <div>
+              <h4>OPERATING SYSTEMS</h4>
+              <p>After learning how all the hardware of many devices worked, I begun to learn how all of the software worked. Along with this I also started to experiment with other operating systems other then Windows 10 (The most common at the time).</p>
+            </div>
+          </div>
+          <div class="timeline-item anim-item">
+            <div class="timeline-year">EARLY 2024</div>
+            <div>
+              <h4>OTHER LANGUAGES</h4>
+              <p>This was the time that I've finally gotten a chance to use another language, Lua. It also marked the time that I almost fully understood how things such as a computer and all its components worked from tinkering with an extra laptop I had.</p>
+            </div>
+          </div>
+          <div class="timeline-item anim-item">
+            <div class="timeline-year">2023</div>
+            <div>
+              <h4>LEARNT PYTHON</h4>
+              <p>Around this time was when I was fully comfterable coding in python, and began wanting to learn other languages that would be better at other taks.</p>
+            </div>
+          </div>
+          <div class="timeline-item anim-item">
+            <div class="timeline-year">2022</div>
+            <div>
+              <h4>WHERE IT STARTED</h4>
+              <p>I was talking to someone I knew at the time and they randomly mentioned that they were getting into coding, which made me also want to get into coding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 David Villnuve. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/NotAUser-1059" target="_blank">GitHub</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: PORTFOLIO
+══════════════════════════════════════════ -->
+<div class="page" id="page-portfolio">
+  <div class="container section">
+    <div class="tag anim-item">Creations</div>
+    <h2 class="section-title anim-item">Things I've Made</h2>
+
+    <div class="filter-bar anim-item">
+      <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+      <button class="filter-btn" onclick="filterProjects('web', this)">Web</button>
+      <button class="filter-btn" onclick="filterProjects('tool', this)">Tools</button>
+      <button class="filter-btn" onclick="filterProjects('design', this)">Design</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <div class="project-card anim-item" data-cat="tool">
+        <div class="project-thumb thumb-1"><span>01</span></div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Tools</span><span class="project-tag">Java</span></div>
+          <h3>Litematica Printer (Fork)</h3>
+          <p>A fork of the minecraft mod Litematica Printer that fixes various issues. Self maintained for personal use, but provided for everyone to use.</p>
+          <a class="project-link" href="https://github.com/NotAUser-1059/litematica-printer" target="_blank">View Project <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="project-card anim-item" data-cat="tool">
+        <div class="project-thumb thumb-2"><span>02</span></div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Tool</span><span class="project-tag">Lua</span></div>
+          <h3>PROJECT TITLE TWO</h3>
+          <p>TBA</p>
+          <a class="project-link" href="#" target="_blank">View Project <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="project-card anim-item" data-cat="design">
+        <div class="project-thumb thumb-3"><span>03</span></div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Design</span><span class="project-tag">JS</span></div>
+          <h3>PROJECT TITLE THREE</h3>
+          <p>TBA</p>
+          <a class="project-link" href="#" target="_blank">View Project <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="project-card anim-item" data-cat="web">
+        <div class="project-thumb thumb-4"><span>04</span></div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Web</span><span class="project-tag">Flask</span></div>
+          <h3>PROJECT TITLE FOUR</h3>
+          <p>TBA</p>
+          <a class="project-link" href="#" target="_blank">View Project <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="project-card anim-item" data-cat="tool">
+        <div class="project-thumb thumb-5"><span>05</span></div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Tool</span><span class="project-tag">Python</span></div>
+          <h3>PROJECT TITLE FIVE</h3>
+          <p>TBA</p>
+          <a class="project-link" href="#" target="_blank">View Project <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="project-card anim-item" data-cat="design">
+        <div class="project-thumb thumb-6"><span>06</span></div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Design</span></div>
+          <h3>PROJECT TITLE SIX</h3>
+          <p>TBA</p>
+          <a class="project-link" href="#" target="_blank">View Project <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 David Villnuve. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/NotAUser-1059" target="_blank">GitHub</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: BLOG / WRITING
+══════════════════════════════════════════ -->
+<div class="page" id="page-blog">
+  <div class="container section">
+    <div class="tag anim-item">Thoughts &amp; writing</div>
+    <h2 class="section-title anim-item">Opinions &amp; Information</h2>
+
+    <div class="post-list">
+      <div class="post-item anim-item">
+        <div class="post-date">Apr 2026</div>
+        <div><div class="post-title">Opinion on AI</div><div class="post-excerpt">I believe that AI should be used where ever anyone finds use out of it. The only current issue with AI is the mass use of it for personal gain without any disclaimer or work put in. As long as people were to use AI in a way that only effects them and not others, or effects others in a positive way, I see no issue in it.</div></div>
+        <span class="post-cat">Opinion</span>
+      </div>
+      <div class="post-item anim-item">
+        <div class="post-date">Mar 2026</div>
+        <div><div class="post-title">Title</div><div class="post-excerpt">TBA</div></div>
+        <span class="post-cat">Dev</span>
+      </div>
+      <div class="post-item anim-item">
+        <div class="post-date">Feb 2026</div>
+        <div><div class="post-title">Title</div><div class="post-excerpt">TBA</div></div>
+        <span class="post-cat">Case Study</span>
+      </div>
+      <div class="post-item anim-item">
+        <div class="post-date">Jan 2026</div>
+        <div><div class="post-title">Title</div><div class="post-excerpt">TBA</div></div>
+        <span class="post-cat">Personal</span>
+      </div>
+      <div class="post-item anim-item">
+        <div class="post-date">Dec 2025</div>
+        <div><div class="post-title">Title</div><div class="post-excerpt">TBA</div></div>
+        <span class="post-cat">Opinion</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 David Villnuve. All rights reserved.</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="container section contact-section">
+    <div class="tag anim-item">Reach out</div>
+    <h2 class="section-title anim-item">Contact</h2>
+    <p class="contact-intro anim-item">The best ways to contact me.</p>
+
+    <div class="contact-cards anim-item">
+
+      <a class="contact-card" href="mailto:example@example.com">
+        <div class="contact-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M2 7l10 7 10-7"/>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">example@example.com</div>
+        </div>
+        <svg class="contact-card-arrow" width="14" height="14" viewBox="0 0 12 12" fill="none">
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </a>
+
+      <a class="contact-card" href="https://github.com/NotAUser-1059" target="_blank">
+        <div class="contact-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">GitHub</div>
+          <div class="contact-card-value">@NotAUser-1059</div>
+        </div>
+        <svg class="contact-card-arrow" width="14" height="14" viewBox="0 0 12 12" fill="none">
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </a>
+
+      <!-- <a class="contact-card" href="https://linkedin.com" target="_blank">
+        <div class="contact-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-value">linkedin.com/in/you</div>
+        </div>
+        <svg class="contact-card-arrow" width="14" height="14" viewBox="0 0 12 12" fill="none">
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </a> -->
+
+      <div class="contact-card contact-card--static">
+        <div class="contact-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">Discord</div>
+          <div class="contact-card-value">_notauser_</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 David Villnuve. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/NotAUser-1059" target="_blank">GitHub</a>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
